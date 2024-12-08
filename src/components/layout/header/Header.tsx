@@ -1,24 +1,29 @@
-import React from 'react';
-import { Settings } from 'lucide-react';
-import NotificationBadge from './NotificationBadge';
-import UserProfile from './UserProfile';
-import Logo from '../../common/Logo';
+import tabIcon from "./../../../assets/images/tabIcon.svg";
+import soundIcon from "./../../../assets/images/sound.svg";
+import arrowDown from "./../../../assets/images/arrow-down.svg";
+
+import NotificationBadge from "./NotificationBadge";
+
+import Logo from "../../common/Logo";
+import { FiSearch } from "react-icons/fi";
+import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="h-[60px] bg-navy-800 border-b border-navy-700 px-4 flex items-center justify-between relative shadow-lg">
+    <header className="h-[60px] bg-navy-800 border-b border-navy-700 px-4 flex items-center justify-between relative shadow-lg gap-3">
       <div className="absolute inset-y-0 left-0 w-[1px] bg-gradient-to-b from-navy-700/50 to-navy-700/20" />
       <Logo />
-      
-      <div className="flex items-center space-x-3">
+
+      <div className="flex items-center space-x-6">
+        <FiSearch className="w-6 h-6 text-white" />
+        <img src={tabIcon} alt="tab icon" />
+        <img src={soundIcon} alt="sound icon" />
+
         <NotificationBadge count={99} />
-        <button className="p-1.5 hover:bg-navy-700 rounded-lg transition-colors">
-          <Settings className="w-4 h-4 text-gray-400 hover:text-white" />
-        </button>
-        <UserProfile 
-          name="John Doe"
-          avatar="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-        />
+
+        <FaUserCircle className="text-white w-9 h-9" />
+
+        <img src={arrowDown} alt="arrowdown" />
       </div>
     </header>
   );
